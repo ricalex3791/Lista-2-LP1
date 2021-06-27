@@ -17,7 +17,13 @@ template<class InputIt, class T, class Equal>
 InputIt find(InputIt first, InputIt last, const T& value, Equal eq)
 {
     // TODO
-    return first;
+     while (first!=last) {
+         if(*first==value){
+            return first;
+         }
+        first++;
+    }
+    return last;
 }
 
 }
