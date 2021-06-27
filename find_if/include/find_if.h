@@ -11,13 +11,22 @@ using std::sort;
 namespace graal {
 
 /*! 
- * TODO: documentação no estilo doxygen
+ * @param first Ponteiro para o primeiro elemento do range
+ * @param last Ponteiro para a posição logo após o último elemento do range
+ * @param p O predicado que será testado
+ * 
+ * @return Um iterator para o primeiro elemento no range igual ao valor recebido por parâmetro. Se o valor não for encontrado no range, a função retorna o iterator last.
  */
 template<class InputIt, class UnaryPredicate>
 InputIt find_if(InputIt first, InputIt last, UnaryPredicate p)
 {
-    // TODO
-    return first;
+    while (first!=last) {
+         if(p(*first)==true){
+            return first;
+         }
+        first++;
+    }
+    return last;
 }
 
 }
