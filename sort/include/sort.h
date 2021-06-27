@@ -17,6 +17,13 @@ template<class ForwardIt, class Comparison>
 void sort(ForwardIt first, ForwardIt last, Comparison cmp)
 {
     // TODO
+    for(ForwardIt i = first; i < last; i++){
+        for(ForwardIt j = i; j < last; j++){
+            if(cmp(*i,*j) == false){
+                std::swap(*i, *j);
+            }
+        }
+    }
 }
 
 }
